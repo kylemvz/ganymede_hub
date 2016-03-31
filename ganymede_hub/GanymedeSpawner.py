@@ -10,6 +10,6 @@ class GanymedeSpawner(SystemUserSpawner):
         Query the REST user client running on a local socket.
         """
         response = add_user(self.user.name)
-        if 'uid' not in response:
+        if "uid" not in response:
             raise HTTPError(403)
         return response['uid']
