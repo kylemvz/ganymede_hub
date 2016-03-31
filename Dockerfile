@@ -24,7 +24,8 @@ COPY . /srv/ganymede_hub
 RUN pip install /srv/ganymede_hub/. && \
     rm -rf /srv/ganymede_hub
 
-# Eventually we can use pip to install, but unfortunately, the latest pypi release is 0.2.0 on Jan 4, but
-# we are using a feature (username_map) first introduced in commit a37ec45120e1058a19aee49707724c6b90470323 from Jan 7.
+# Eventually we can use pip to install, but for now we must install through git.
+# The latest pypi release of oauthenticator is 0.2.0 from Jan 4, but we are using a feature (username_map) first introduced in commit a37ec45120e1058a19aee49707724c6b90470323 from Jan 7.
+# Additionally, we are also relying on a change (_env_default -> get_env) in PR #84 of dockerspawner, which was merged on Mar 24 (the latest version on pypi is 0.2.0 from Feb 18).
 #RUN pip install -r /srv/ganymede_hub/requirements.txt /srv/ganymede_hub/. && \
 #    rm -rf /srv/ganymede_hub
