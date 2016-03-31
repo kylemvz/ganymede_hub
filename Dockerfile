@@ -20,8 +20,3 @@ RUN service docker start
 COPY . /srv/ganymede_hub
 RUN pip install -r /srv/ganymede_hub/requirements.txt /srv/ganymede_hub/. && \
     rm -rf /srv/ganymede_hub
-
-# Download and build the ganymede_nbserver image.
-RUN git clone https://github.com/kylemvz/ganymede_nbserver.git /srv/ganymede_nbserver && \
-    docker build -t "lab41/ganymede_nbserver" /srv/ganymede_nbserver && \
-    rm -rf /srv/ganymede_nbserver
