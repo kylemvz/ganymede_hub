@@ -25,6 +25,6 @@ RUN pip install /srv/ganymede_hub/. && \
     rm -rf /srv/ganymede_hub
 
 # Eventually we can use pip to install, but unfortunately, the latest pypi release is 0.2.0 on Jan 4, but
-# we are using a feature (usernames_map) first introduced in commit a37ec45120e1058a19aee49707724c6b90470323 from Jan 7.
+# we are using a feature (username_map) first introduced in commit a37ec45120e1058a19aee49707724c6b90470323 from Jan 7.
 #RUN pip install -r /srv/ganymede_hub/requirements.txt /srv/ganymede_hub/. && \
 #    rm -rf /srv/ganymede_hub
