@@ -8,8 +8,8 @@ class GanymedeSpawner(SystemUserSpawner):
     # This function is included due to an issue in dockerspawner/systemuserspawner.py. _env_default refers to a
     # superclass method _env_default whose name was changed to get_env in PR #84.
     def get_env(self):
-        # Skip SystemUserSpawner's get_env(), which does not exist.
-        env = super(GanymedeSpawner, self).get_env()
+        # Skip SystemUserSpawner's call to env, which may call _env_default.
+        env = super(SystemUserSpawner, self).get_env()
         env.update(dict(
             JPY_USER=self.user.name,
             JPY_COOKIE_NAME=self.user.server.cookie_name,
