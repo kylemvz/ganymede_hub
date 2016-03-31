@@ -13,9 +13,6 @@ RUN apt-get -y install apt-transport-https ca-certificates && \
     apt-cache policy docker-engine && \
     apt-get -y install docker-engine
 
-# Start Docker daemon
-RUN service docker start
-
 # Install Ganymede Hub + dependencies
 COPY . /srv/ganymede_hub
 RUN pip install -r /srv/ganymede_hub/requirements.txt /srv/ganymede_hub/. && \
