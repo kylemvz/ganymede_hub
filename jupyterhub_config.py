@@ -1,6 +1,6 @@
 import os
 
-c.JupyterHub.spawner_class = 'ganymede_hub.GanymedeSpawner'
+c.JupyterHub.spawner_class = 'ganymede_hub.GanymedeSpawner.GanymedeSpawner'
 c.JupyterHub.authenticator_class = 'oauthenticator.GitHubOAuthenticator'
 
 c.GitHubOAuthenticator.oauth_callback_url = os.environ['OAUTH_CALLBACK_URL']

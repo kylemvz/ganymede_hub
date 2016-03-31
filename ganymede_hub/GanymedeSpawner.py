@@ -2,7 +2,7 @@ from dockerspawner import SystemUserSpawner
 from .QueryUser import add_user
 
 class GanymedeSpawner(SystemUserSpawner):
-    container_image = "Lab41/ganymede_nbserver"
+    container_image = "lab41/ganymede_nbserver"
 
     def _user_id_default(self):
         """
