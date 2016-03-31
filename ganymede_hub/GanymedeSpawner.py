@@ -1,4 +1,5 @@
 from dockerspawner import SystemUserSpawner
+from tornado.web import HTTPError
 from .QueryUser import add_user
 
 class GanymedeSpawner(SystemUserSpawner):
@@ -9,4 +10,6 @@ class GanymedeSpawner(SystemUserSpawner):
         Query the REST user client running on a local socket.
         """
         response = add_user(self.user.name)
+        if 'uid' not in response:
+            raise HTTPError(403)
         return response['uid']
