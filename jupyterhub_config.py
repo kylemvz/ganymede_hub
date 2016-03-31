@@ -4,7 +4,7 @@ import ast
 c.JupyterHub.spawner_class = 'ganymede_hub.GanymedeSpawner.GanymedeSpawner'
 c.JupyterHub.authenticator_class = 'oauthenticator.GitHubOAuthenticator'
 
-c.GitHubOAuthenticator.username_map = ast.literal_eval(os.environ["USERNAMES_MAP"])
+c.GitHubOAuthenticator.username_map = ast.literal_eval(os.environ["USERNAME_MAP"])
 
 c.GitHubOAuthenticator.oauth_callback_url = os.environ['OAUTH_CALLBACK_URL']
 c.GitHubOAuthenticator.client_id = os.environ['GITHUB_CLIENT_ID']
